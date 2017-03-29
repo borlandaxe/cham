@@ -1,0 +1,19 @@
+#!/usr/bin/expect
+set timeout 1
+set ip 			[lindex $argv 0]
+spawn telnet $ip
+
+expect "(none) login:" 
+send "nexxadmin\r"
+
+expect "Password:"
+send "y1n2inc.com0755\r"
+
+expect "#"
+send "cd /media/sda/sda1/wt3020\r"
+
+expect "#"
+send "sh load.sh\r"
+
+sleep 8
+expect "#"
