@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cd ~/develop/cham && \
+cd ~/develop/github/cham && \
 	git add * && git commit -a -m "mod" && git push
 
-rsync -ur --delete --exclude '.git/**' ~/develop/cham/ ~/develop/github/cham && \
-	cd ~/develop/github/cham && \
+rsync -ur --delete --exclude '.git/**' ~/develop/github/cham/ ~/develop/cham && \
+	cd ~/develop/cham && \
 	git add * && git commit -a -m "mod" && git push
 
 alias hp="http_proxy=http://127.0.0.1:8123"
@@ -19,4 +19,10 @@ do
 done
 
 :<<C
+cd ~/develop/cham && \
+	git add * && git commit -a -m "mod" && git push
+
+rsync -ur --delete --exclude '.git/**' ~/develop/cham/ ~/develop/github/cham && \
+	cd ~/develop/github/cham && \
+	git add * && git commit -a -m "mod" && git push
 C
