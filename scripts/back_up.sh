@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cd ~/develop/cham && \
+	git add * && git commit -a -m "mod" && git push
+
 rsync -ur --exclude '.git/**' ~/develop/cham/ ~/develop/github/cham && \
 	cd ~/develop/github/cham && \
 	git add * && git commit -a -m "mod" && git push
