@@ -4,8 +4,9 @@ iso_file=$2
 cpus=$3
 mem=$4
 disp=$5
+order=$6
 
-qemu-system-x86_64 -drive file=$virtual_dir/$mach.img,format=raw,index=0,media=disk -hdachs 1,1,1,none -m $mem -smp $cpus -drive file=$iso_file,index=1,media=cdrom -display $disp --enable-kvm -boot order=dc -usb -net nic -net tap,ifname=tap0,script=no,downscript=no -M q35
+qemu-system-x86_64 -drive file=$virtual_dir/$mach.img,format=raw,index=0,media=disk -hdachs 1,1,1,none -m $mem -smp $cpus -drive file=$iso_file,index=1,media=cdrom -display $disp --enable-kvm -boot order=$order -usb -net nic -net tap,ifname=tap0,script=no,downscript=no -M q35
 
 exit
 
