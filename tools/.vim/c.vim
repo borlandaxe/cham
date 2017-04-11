@@ -1,1 +1,1 @@
-/home/cham/develop/github/cham/conf/c.vim
+../../conf/c.vim
