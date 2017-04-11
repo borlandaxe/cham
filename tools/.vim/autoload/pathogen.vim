@@ -1,0 +1,1 @@
+/home/cham/Software/vim/vim-pathogen/autoload/pathogen.vim
