@@ -65,8 +65,8 @@ noremap <C-K> 	<C-W>k
 noremap <C-H> 	<C-W>h
 noremap <C-L> 	<C-W>l
 
-noremap <tab> 	:MBEbn<CR>
-noremap <S-tab> :MBEbp<CR>
+noremap <C-M> 	:MBEbn<CR>
+noremap <C-N>	:MBEbp<CR>
 
 let &termencoding=&encoding
 set fileencodings=utf-8,gbk
@@ -121,7 +121,7 @@ let g:ConqueTerm_InsertOnEnter = 0
 
 let g:ctrlp_prompt_mappings = {
     \ 'PrtBS()':              ['<bs>', '<c-h>'],
-    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>', '<c-i>'],
+    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>', '<c-u>'],
     \ 'ToggleType(1)':        ['<c-l>', '<c-up>'],
     \ 'ToggleType(-1)':       ['<c-&>', '<c-down>'],
     \ 'PrtCurLeft()':         ['<c-b>', '<left>', '<c-^>'],
