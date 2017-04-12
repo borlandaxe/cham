@@ -1,6 +1,7 @@
 #!/bin/bash
 
 user=$(cat /etc/passwd | grep 1000 | awk -F ':' '{print $1}') 
+
 ip link add name br0 type bridge &&
 ip addr add 192.168.100.1/24 dev br0 &&
 ip link set br0 up &&
@@ -23,28 +24,17 @@ ip link set tap2 up &&
 sysctl net.ipv4.ip_forward=1 &&
 
 iptables -F &&
-iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE &&
-iptables -t nat -A POSTROUTING -s 192.168.7.0/24 -o eth0 -j MASQUERADE &&
-
-ip link set enp0s31f6 down  &&
-ip link set enp0s31f6 name eth0 &&
-ip link set eth0 up &&
-
-ip link set enp0s20f0u5 down &&
-ip link set enp0s20f0u5 name eth1 &&
-ip link set eth1 up &&
-
-route > /home/zhangheng/rrrrrr &&
-
-route del default gw 192.168.7.133
-
-route > /home/zhangheng/tttttt &&
-
-#sh /home/zhangheng/develop/github/cham/scripts/office/config_net.sh
 
 if [ "zhangheng" = "$user" ];then
-	#sh /home/$user/develop/github/cham/scripts/office/config_net.sh
-	#sh /home/zhangheng/develop/github/cham/scripts/office/config_net.sh
-	which sh
-	#echo abc
+	ip link set enp0s31f6 down  && \
+	ip link set enp0s31f6 name eth0 && \
+	ip link set eth0 up
+
+	ip link set enp0s20f0u5 down && \
+	ip link set enp0s20f0u5 name eth1 && \
+	ip link set eth1 up
+	
+	iptables -t nat -A POSTROUTING -s 192.168.7.0/24 -o eth0 -j MASQUERADE
 fi
+
+iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
