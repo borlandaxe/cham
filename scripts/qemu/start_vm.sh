@@ -6,9 +6,12 @@ mem=$4
 disp=$5
 order=$6
 tap=$7
+macid=$8
 
-qemu-system-x86_64 -drive file=$virtual_dir/$mach.img,format=raw,index=0,media=disk -hdachs 1,1,1,none -m $mem -smp $cpus -drive file=$iso_file,index=1,media=cdrom -display $disp --enable-kvm -boot order=$order -net nic -net tap,ifname=$tap,script=no,downscript=no -M q35 -usbdevice tablet 
+#qemu-system-x86_64 -drive file=$virtual_dir/$mach.img,format=raw,index=0,media=disk -hdachs 1,1,1,none -m $mem -smp $cpus -drive file=$iso_file,index=1,media=cdrom -display $disp --enable-kvm -boot order=$order -net nic -net tap,ifname=$tap,script=no,downscript=no -M q35 -usbdevice tablet 
 #-usb -device usb-host,vendorid=0x067b,productid=0x2303
+
+qemu-system-x86_64 -drive file=$virtual_dir/$mach.img,format=raw,index=0,media=disk -hdachs 1,1,1,none -m $mem -smp $cpus -drive file=$iso_file,index=1,media=cdrom -display $disp --enable-kvm -boot order=$order -netdev tap,id=vmnet0,ifname=$tap,script=no,downscript=no -device e1000,netdev=vmnet0,mac=00:00:00:11:11:$macid -M q35 -usbdevice tablet 
 
 exit
 
