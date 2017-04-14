@@ -20,6 +20,11 @@ ip addr add 192.168.100.12/24 dev tap2 &&
 ip link set tap2 master br0 &&
 ip link set tap2 up &&
 
+ip tuntap add dev tap3 mode tap user $user &&
+ip addr add 192.168.100.12/24 dev tap3 &&
+ip link set tap3 master br0 &&
+ip link set tap3 up &&
+
 sysctl net.ipv4.ip_forward=1 &&
 
 iptables -F &&
