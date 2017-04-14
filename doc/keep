@@ -1,0 +1,80 @@
+2017-04-14 16:36:16
+add realvnc to gnome application shortcut.
+1.download realvnc x86_64 binary file;
+2.put binary file in the __install/bin directiory;
+3.create new realvnc.desktop under /user/share/applicaions/;
+4.the binary filename shut be exactly as the .desktop file, ie realvnc & realvnc.desktop.
+
+2017-02-25 01:20:02
+configure editor for git:
+git config --global core.editor "vim"
+or
+export GIT_EDITOR=vim
+
+2016-09-27 15:09:38
+
+pass 
+	--exclude '.git/**'
+to rclone, to ingnore the entire .git direcotory. .git/* won't commense the work, from the rclone doc.  2017-02-25 01:19:52
+
+*******************************************************************************
+2016-09-24 21:41:19
+install YCM for vim
+1.add following to the Vundle section of your .vimrc
+	Plugin 'Valloric/YouCompleteMe'
+
+2.run :BundleInstall to install the YouCompleteMe plugin, this step actuall just download the code into the bundle directory.
+
+3.install c-family support:
+	cd ~/.vim/bundle/YouCompleteMe
+	./install.py --clang-completer
+
+4.install teh YCM-Generator, so we can generate the compilation flags:
+	Plugin 'rdnetto/YCM-Generator'
+
+5.run :YcmGenerateConfig to generate compilation flags
+
+*******************************************************************************
+
+2016-09-24 21:17:04
+set up local repos for git
+
+1.install git;
+2.enable ssh server;
+3.create the repos dir, like:
+	mkdir ~/develop/repos
+
+4.enter the repos dir, and create the git repository:
+	cd ~/develop/repos
+	git init --bare cboot.git
+
+5.check out the empty repository just created:
+	cd ~/sandbox
+	git clone cham@127.0.0.1:/Users/cham/develop/repos/cboot.git
+
+6.copy code into cboot, and push to cboot.git
+	cp ~/cboot/* ~/sandbox/cboot
+	cd ~/sandbox/cboot
+	git commit -a
+	git push
+
+*******************************************************************************
+
+2016-09-22 22:03:53
+set up proxy for terminal:
+
+sudo port install polipo
+
+cat polipo.conf 
+	socksParentProxy = "localhost:1080"
+	socksProxyType = socks5
+
+polipo -c polipo.conf &
+
+alias hp="http_proxy=http://127.0.0.1:8123"
+alias hsp="https_proxy=http://127.0.0.1:8123"
+
+hp curl ip.gs
+hsp curl ip.gs
+
+*******************************************************************************
