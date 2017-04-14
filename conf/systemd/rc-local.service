@@ -1,0 +1,20 @@
+[Unit]
+Description=my own rc.local
+ConditionPathExists=/etc/my-rc.local
+After=network.target
+#After=graphical.target
+#After=systemd-modules-load.service
+#After=gdm.service
+#After=systemd-logind
+#After=display-manager.service
+
+[Service]
+Type=forking
+ExecStart=/etc/my-rc.local
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+
+[Install]
+Alias=my-rc-local.service
+WantedBy=multi-user.target
