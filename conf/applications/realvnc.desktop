@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=RealVnc
+Comment=VNC client
+Exec=realvnc
+Icon=kodi
+Terminal=false
+StartupNotify=false
+Categories=Network;RemoteAccess;
