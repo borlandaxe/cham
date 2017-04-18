@@ -1,0 +1,2 @@
+2017-04-18 15:16:08
+time rpmbuild -ba --short-circuit --with baseonly --with firmware --without debuginfo --without kabichk ~/rpmbuild/SPECS/kernel.spec
