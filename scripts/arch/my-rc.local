@@ -45,6 +45,21 @@ fi
 
 iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
 
+#use ram sapce for browser cache.
+mkdir -p /dev/shm/tmp/cache/chromium
+rm -rf /home/cham/.cache/chromium/Default/Cache
+ln -sf /dev/shm/tmp/cache/chromium /home/cham/.cache/chromium/Default/Cache
+
+mkdir -p /dev/shm/tmp/cache/chromium-media
+rm -rf /home/cham/.cache/chromium/Default/Media\ Cache
+ln -sf /dev/shm/tmp/cache/chromium-media /home/cham/.cache/chromium/Default/Media\ Cache
+
+mkdir -p /dev/shm/tmp/cache/firefox
+rm -rf /home/cham/.cache/mozilla/firefox
+ln -sf /dev/shm/tmp/cache/firefox /home/cham/.cache/mozilla/
+
+chown -R cham:cham /dev/shm/tmp/cache
+
 :<<C
 sudo -H -u zhangheng bash -c "/home/zhangheng/__install/bin/autossh -p 22 -M 6788 -NCfR 6789:localhost:22 office@23.110.64.166"
 /bin/su -c '/usr/bin/autossh -M 5678 -NR 1234:localhost:2223 user1@123.123.123.123 -p2221' - user1
