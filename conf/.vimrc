@@ -65,8 +65,8 @@ noremap <C-K> 	<C-W>k
 noremap <C-H> 	<C-W>h
 noremap <C-L> 	<C-W>l
 
-noremap <C-M> 	:MBEbn<CR>
-noremap <C-N>	:MBEbp<CR>
+noremap <C-C> 	:MBEbn<CR>
+noremap <C-X>	:MBEbp<CR>
 
 let &termencoding=&encoding
 set fileencodings=utf-8,gbk
