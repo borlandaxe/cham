@@ -91,7 +91,7 @@ call vundle#end()            " required
 filetype plugin indent on 
 
 "let g:ctrlp_user_command = 'find %s -type f'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files'] 	"use git for listing.
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files'] 	"use git for listing.
 let g:ctrlp_working_path_mode = 'wa' 							"scan CWD.
 let g:ctrlp_max_files = 0										"unlimited file num.
 let g:ctrlp_brief_prompt = 1 									"<bs> to exit on empty prompt.
