@@ -43,6 +43,12 @@ if [ "zhangheng" = "$user" ];then
 	/home/zhangheng/__install/bin/autossh -p 22 -M 6788 -NCfR 6789:localhost:22 office@23.110.64.166
 fi
 
+if [ "cham" = "$user" ];then
+	ip link set wlp2s0 down  && \
+	ip link set wlp2s0 name wlan0 && \
+	ip link set wlan0 up
+fi
+
 iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
 
 #use ram sapce for browser cache.
