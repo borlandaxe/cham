@@ -1,0 +1,9 @@
+{
+    "server":"23.110.64.166",
+    "server_port":8398,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"bowman",
+    "timeout":300,
+    "method":"RC4-MD5",
+}
