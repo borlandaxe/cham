@@ -67,6 +67,8 @@ ln -sf /dev/shm/tmp/cache/firefox /home/cham/.cache/mozilla/
 
 chown -R cham:cham /dev/shm/tmp/cache
 
+/usr/bin/python /usr/bin/sslocal -c /home/cham/conf/vps_config.json 2>/dev/null &
+
 :<<C
 sudo -H -u zhangheng bash -c "/home/zhangheng/__install/bin/autossh -p 22 -M 6788 -NCfR 6789:localhost:22 office@23.110.64.166"
 /bin/su -c '/usr/bin/autossh -M 5678 -NR 1234:localhost:2223 user1@123.123.123.123 -p2221' - user1
