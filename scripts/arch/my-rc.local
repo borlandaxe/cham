@@ -36,7 +36,7 @@ if [ "zhangheng" = "$user" ];then
 	
 	iptables -t nat -A POSTROUTING -s 192.168.7.0/24 -o eth0 -j MASQUERADE
 
-	/home/zhangheng/__install/bin/autossh -p 22 -M 6787 -NCfR 6789:localhost:22 office@23.110.64.166
+	/home/zhangheng/__install/bin/autossh -o ServerAliveInterval=60 -p 22 -M 6787 -NCfR 6789:localhost:22 office@23.110.64.166
 fi
 
 if [ "cham" = "$user" ];then
