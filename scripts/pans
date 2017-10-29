@@ -1,0 +1,4 @@
+sudo ifconfig bnep0 192.168.44.3 &&
+sudo route add default gw 192.168.44.1 &&
+echo "nameserver 8.8.8.8"  > ~/.tmp &&
+sudo mv ~/.tmp  /etc/resolv.conf
