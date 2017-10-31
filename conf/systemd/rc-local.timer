@@ -3,7 +3,7 @@ Description=run rc-local later
 
 [Timer]
 OnStartupSec=60
-Unit=rc-local.service
+Unit=delay.service
 
 [Install]
 Alias=rc-local.timer

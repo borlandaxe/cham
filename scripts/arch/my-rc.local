@@ -1,7 +1,13 @@
 #!/bin/bash
 
-#shutdown the unused video card.
-echo OFF > /sys/kernel/debug/vgaswitcheroo/switch
+:<<C
+#for rmbp
+if [ $1 = "delay" ];then
+	#shutdown the unused video card.
+	echo OFF > /sys/kernel/debug/vgaswitcheroo/switch
+	exit 0
+fi
+C
 
 user=$(cat /etc/passwd | grep 1000 | awk -F ':' '{print $1}') 
 ip link add name br0 type bridge &&
