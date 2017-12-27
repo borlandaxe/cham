@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+set timeout 1
+set ip 			[lindex $argv 0]
+spawn telnet $ip
+
+expect "RT-N14U login:" 
+send "admin\r"
+
+expect "Password:"
+send "admin\r"
+
+expect "#"
+interact
