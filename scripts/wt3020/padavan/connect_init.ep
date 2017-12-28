@@ -16,5 +16,5 @@ send "cd /media/$disk/.padavan\r"
 expect "#"
 send "sh load.sh\r"
 
-sleep 8
+sleep 3
 expect "#"
