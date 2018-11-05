@@ -27,8 +27,8 @@ map <Leader>r :e<CR>
 map <Leader>q :bd<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>u :UpdateTypesFileOnly<CR>:call Tag_syntax_coloring()<CR><CR><CR><CR><CR>
-map <Leader>y :YcmGenerateConfig<CR>
+"map <Leader>u :UpdateTypesFileOnly<CR>:call Tag_syntax_coloring()<CR><CR><CR><CR><CR>
+"map <Leader>y :YcmGenerateConfig<CR>
 
 nmap <Leader>cs :cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR>
 nmap <Leader>cg :cs find g <C-R>=expand("<cword>")<CR><CR>
