@@ -4,6 +4,7 @@ set ruler
 set autoindent
 set cursorline
 set tabstop=4
+set expandtab
 set incsearch
 set hidden
 set backspace=indent,eol,start
